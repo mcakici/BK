@@ -1,1 +1,121 @@
-<p>home works!</p>
+<!-- homepage - 1 -->
+<div class="w-full relative bg-gradient-to-b from-[#FFFBEC] to-[#f7f5ef] overflow-hidden">
+
+    <div class="px-3 md:px-24 min-h-[520px]">
+        <div class="z-50 relative">
+            <div class="grid md:grid-cols-2">
+                <div class="grid grid-cols-1 text-center md:text-left z-5">
+                    <div class="font-bold text-3xl md:text-5xl pt-12 pb-5">Collectible Sneakers</div>
+                    <span class="font-semibold max-w-lg">Sit elit feugi,at turpis sed integer integer accumsam turpis.
+                        Sed
+                        suspendisse nec lorem mauris.
+                        Pharetra, eu
+                        imperdier ipsum ultrices amet.</span>
+                    <div class="flex gap-2 mt-8 md:mt-2 justify-center md:justify-start">
+                        <div><button
+                                class="font-semibold text-amber-900 border-amber-900 border-2 py-2 px-3 border-solid rounded-lg hover:bg-amber-900 hover:text-white">Sign
+                                up now</button></div>
+                        <div><button
+                                class="font-semibold text-amber-900 border-transparent border-2 py-2 px-3 border-solid rounded-lg hover:bg-amber-900 hover:text-white"><i
+                                    class="fa fa-play-circle-o" aria-hidden="true"></i> Watch Demo</button></div>
+                    </div>
+                </div>
+                <div>
+                    <img class="float-right -rotate-12 mt-3"
+                        src="https://izicop.com/cdn/shop/products/NikeCraft_General_Purpose_Shoe_Tom_Sachs_Dark_Sulfur-DA6672-700-0.png" />
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 py-16 text-center md:text-left">
+                <div>
+                    <div><i class="fa fa-trophy fa-4x text-cyan-500" aria-hidden="true"></i></div>
+                    <h3 class="font-bold py-4">Nibh viverra</h3>
+                    <p>Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,
+                        massa.</p>
+                </div>
+
+                <div>
+                    <div><i class="fa fa-snapchat-ghost fa-4x text-green-500" aria-hidden="true"></i></div>
+
+                    <h3 class="font-bold py-4">Cursus amet</h3>
+                    <p>Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,
+                        massa.</p>
+                </div>
+
+                <div>
+                    <div><i class="fa fa-television fa-4x text-red-700" aria-hidden="true"></i></div>
+                    <h3 class="font-bold py-4">Ipsum lorem</h3>
+                    <p>Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,
+                        massa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="absolute bg-[rgba(254,243,199,0.5)] -rotate-[16deg] md:-rotate-[14deg] top-1/2 md:top-1/4 left-1/6 w-[180%] h-screen rounded-sm">
+    </div>
+
+</div>
+
+<!-- homepage - 2 -->
+<div class="px-8 md:px-24 bg-[#0F172A] text-white text-sm min-h-[150px]">
+    <div class="grid md:grid-cols-2 pt-12">
+        <div class="font-bold text-4xl md:text-5xl text-center md:text-left">The best of the best</div>
+        <div class="text-center mt-5 md:mt-0"><button
+                class="font-semibold text-lg md:float-right mr-4 border-white border-2 py-3 px-8 border-solid rounded-lg hover:text-black hover:bg-white">Sign
+                up now</button></div>
+    </div>
+    <div class="grid md:grid-cols-3 py-12 gap-16">
+
+        <div class="rounded overflow-hidden shadow-xl shadow-[rgba(117,141,199,0.44)]"
+            *ngFor="let item of ['https://media.gq.com/photos/59135193dd27d21b427e26be/16:9/w_2560%2Cc_limit/acg-sneakers.jpg','https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500','https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_500,c_limit/f55bf732-7fa9-4b38-8464-3332d97f879a/nike%E2%80%99s-best-casual-shoes-for-everyday-wear.jpg']">
+            <img class="h-72  object-cover w-full" src="{{ item }}">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-4">Title</div>
+                <p class="text-white text-base">
+                    Egestas elit dui scelerisque ut eu purus aliquam fvitae habitasse.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-8 text-center">
+                <button
+                    class="font-semibold text-1xl block w-full border-white border-2 py-3 px-8 border-solid rounded-lg hover:text-black hover:bg-white"><i
+                        class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- homepage - 4 -->
+<div class="px-8 md:px-24 relative bg-[#FFFDF3] overflow-hidden">
+    <div class="grid md:grid-cols-2 pt-12">
+        <div class="font-bold text-4xl md:text-5xl text-center md:text-left">Because they love us</div>
+        <div class="text-center mt-5 md:mt-0"><button
+                class="font-semibold text-lg md:float-right mr-4 border-white border-2 py-3 px-8 border-solid rounded-lg hover:text-black hover:bg-white">Sign
+                up now</button></div>
+    </div>
+    <div class="grid md:grid-cols-3 py-12 gap-16">
+
+        <div class="rounded overflow-hidden shadow-xl shadow-[rgba(117,141,199,0.44)]"
+            *ngFor="let item of ['https://media.gq.com/photos/59135193dd27d21b427e26be/16:9/w_2560%2Cc_limit/acg-sneakers.jpg','https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500','https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_500,c_limit/f55bf732-7fa9-4b38-8464-3332d97f879a/nike%E2%80%99s-best-casual-shoes-for-everyday-wear.jpg']">
+            <img class="h-16 w-16  object-cover rounded-full" src="{{ item }}">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-4">Zoomer</div>
+                <p class="text-white text-base">
+                    Sit elit feugi,at turpis sed integer integer accumsam turpis.
+                    Sed
+                    suspendisse nec lorem mauris.
+                    Pharetra, eu
+                    imperdier ipsum ultrices amet.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-8 text-center">
+                <button
+                    class="font-semibold text-1xl block w-full border-white border-2 py-3 px-8 border-solid rounded-lg hover:text-black hover:bg-white"><i
+                        class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+</div>
