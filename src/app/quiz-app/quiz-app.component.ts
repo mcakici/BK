@@ -16,6 +16,7 @@ export class QuizAppComponent {
   private interval: any = null;
   public started: boolean = false;
   public finished: boolean = false;
+  
   constructor(private http: HttpClient) {}
 
   ngOnDestroy() {
