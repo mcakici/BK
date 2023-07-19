@@ -1,4 +1,23 @@
-<div class="px-3 md:px-24 py-8 relative bg-[#ebe6d1] min-h-screen"> asdf</div>
+<div class="px-3 md:px-24 py-8 relative bg-[#ebe6d1] min-h-screen">
+    <div #test1 *ngIf="questions.length > 0">
+        <div>{{ countDown }}</div> - {{ activeQuestionIndex+1 }}/10
+        <div class="text-3xl font-semibold py-6">Q{{ activeQuestionIndex+1 }}: {{ questions[activeQuestionIndex].question }}</div>
+        <ul
+            class="text-sm font-medium rounded-lg">
+            <li class="w-full rounded-t-lg dark:border-gray-600" *ngFor="let ans of questions[activeQuestionIndex].answers; let i = index">
+                <div class="flex items-center pl-3">
+                    <input id="{{ questions[activeQuestionIndex].id + '' + i }}" (click)="choose($event)" type="radio" [value]="i" [attr.disabled]="btnsActive ? null : true" name="list-radio"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ">
+                    <label for="{{ questions[activeQuestionIndex].id + '' + i }}"
+                        class="w-full py-3 ml-2 text-sm font-medium">{{ getLetter(i) }}) {{ ans }}
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <button (click)="nextQuestion()">Next</button>
+    </div>
+
+</div>
 
 <!-- <div class="relative bg-[#FFFDF3]">
 

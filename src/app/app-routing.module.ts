@@ -4,11 +4,10 @@ import { CustompageComponent } from './custompage/custompage.component';
 import { QuizAppComponent } from './quiz-app/quiz-app.component';
 import { HomeComponent } from './home/home.component';
 
-const appRoutes: Routes = [
-  //{ path: '', component: LandingPageComponent, title: 'Collers - Landing Page', pathMatch: 'full' },
-  { path: 'quizApp', component: QuizAppComponent, title: 'Quiz App - Collers' },
+const appRoutes: Routes = [ 
 
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full', title: 'Collers - Landing Page' },
+
   { path: 'home', component: HomeComponent, title: 'Collers', pathMatch: 'full' },
   { path: 'products', component: CustompageComponent, title: 'Products - Collers' },
   { path: 'solutions', component: CustompageComponent, title: 'Solutions - Collers' },
@@ -16,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'resources', component: CustompageComponent, title: 'Resources - Collers' },
   { path: 'login', component: CustompageComponent, title: 'Login - Collers' },
   { path: 'signup', component: CustompageComponent, title: 'Sign Up - Collers' },
+  { path: 'quizApp', component: QuizAppComponent, title: 'Quiz App - Collers' },
 
 ];
 
