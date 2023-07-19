@@ -1,9 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { retry } from 'rxjs';
 
@@ -14,60 +9,78 @@ import { retry } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class QuizAppComponent {
-  @ViewChild('test1') test1!: ElementRef;
   public questions: any = [];
-  public activeQuestion: any = {};
   public activeQuestionIndex: number = 0;
-  public countDown: number = 30;
+  public countDown: number = 10;
   public btnsActive: boolean = false;
-  constructor(private http: HttpClient) {
+  private interval: any = null;
+  public started: boolean = false;
+  public finished: boolean = false;
+  constructor(private http: HttpClient) {}
+
+  ngOnDestroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
+  }
+
+  choose(e: any, answerIndex: number): void {
+    this.questions[this.activeQuestionIndex].selected = answerIndex;
+  }
+
+  countdownTicks(): void {
+    this.countDown--;
+    if (this.countDown <= 20) {
+      this.btnsActive = true;
+    }
+    if (this.countDown <= 0) {
+      this.nextQuestion();
+    }
+  }
+
+  nextQuestion(): void {
+    if (!this.btnsActive) return;
+
+    this.activeQuestionIndex++;
+    if (this.activeQuestionIndex == 10) {
+      this.finish();
+    }
+    this.btnsActive = false;
+    this.countDown = 10;
+  }
+
+  start(): void {
+    this.questions = [];
     this.getQuestions((data: any) => {
-      var qqq = data.body.filter((x: any) => x.userId === 1);
-      //console.log(qqq);
+      var rnd = this.getRandom(1, 10);
+      var qqq = data.body.filter((x: any) => x.userId === rnd);
       qqq.forEach((e: any) => {
         this.questions.push({
           userId: e.userId,
           id: e.id,
           question: e.title,
           answers: e.body.split('\n'),
-          selected: 0,
+          selected: undefined,
         });
       });
 
-      this.activeQuestion = this.questions[0];
+      this.finished = false;
+      this.started = true;
       this.btnsActive = false;
-      setInterval(() => {
-        this.countDown--;
-        if (this.countDown <= 20) {
-          this.btnsActive = true;
-        }
-        if (this.countDown <= 0){
-          this.nextQuestion();
-        }
+      this.activeQuestionIndex = 0;
+      this.interval = setInterval(() => {
+        this.countdownTicks();
       }, 1000);
 
       console.log(this.questions);
-      //this.questions
     });
   }
 
-  choose(e : any): void{
-    console.log(e);
-  }
-
-  nextQuestion(): void {
-    if (!this.btnsActive)
-      return;
-
-    this.activeQuestionIndex++;
-    if (this.activeQuestionIndex == 10){
-      this.activeQuestionIndex = 0;
-    }
-    this.btnsActive = false;
-    this.countDown = 30;
-    
-    this.activeQuestion = this.questions[this.activeQuestionIndex];
-    
+  finish(): void {
+    this.finished = true;
+    this.started = false;
+    this.ngOnDestroy();
   }
 
   getQuestions(callback: any): any {
@@ -93,5 +106,13 @@ export class QuizAppComponent {
       case 3:
         return 'D';
     }
+  }
+
+  getRandom(min: number, max: number) {
+    const floatRandom = Math.random();
+    const difference = max - min;
+    const random = Math.round(difference * floatRandom);
+    const randomWithinRange = random + min;
+    return randomWithinRange;
   }
 }

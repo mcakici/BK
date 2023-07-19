@@ -1,21 +1,61 @@
 <div class="px-3 md:px-24 py-8 relative bg-[#ebe6d1] min-h-screen">
-    <div #test1 *ngIf="questions.length > 0">
-        <div>{{ countDown }}</div> - {{ activeQuestionIndex+1 }}/10
-        <div class="text-3xl font-semibold py-6">Q{{ activeQuestionIndex+1 }}: {{ questions[activeQuestionIndex].question }}</div>
-        <ul
-            class="text-sm font-medium rounded-lg">
-            <li class="w-full rounded-t-lg dark:border-gray-600" *ngFor="let ans of questions[activeQuestionIndex].answers; let i = index">
-                <div class="flex items-center pl-3">
-                    <input id="{{ questions[activeQuestionIndex].id + '' + i }}" (click)="choose($event)" type="radio" [value]="i" [attr.disabled]="btnsActive ? null : true" name="list-radio"
+    <div *ngIf="questions.length > 0 && started && !finished">
+        <div class="flex gap-8 text-xl">
+            <div class="text-xl"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ countDown }} sn</div>
+            <div>Q: <span class="font-bold">{{ activeQuestionIndex+1 }}</span>/10</div>
+        </div>
+        <div class="text-3xl font-semibold py-6 text-amber-950">Q{{ activeQuestionIndex+1 }}: {{
+            questions[activeQuestionIndex].question }}</div>
+        <ul class="text-sm font-medium rounded-lg" [ngClass]="{'pointer-events-none': !btnsActive }">
+            <li class="w-full border mb-2 bg-amber-50 border-slate-300 hover:bg-orange-100"
+                *ngFor="let ans of questions[activeQuestionIndex].answers; let i = index">
+                <div class="flex items-center pl-3 text-amber-950">
+                    <input id="{{ questions[activeQuestionIndex].id + '' + i }}" (click)="choose($event,i)" type="radio"
+                        [value]="i" [attr.disabled]="btnsActive ? null : true" name="list-radio"
                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ">
                     <label for="{{ questions[activeQuestionIndex].id + '' + i }}"
-                        class="w-full py-3 ml-2 text-sm font-medium">{{ getLetter(i) }}) {{ ans }}
+                        class="w-full py-3 ml-2 text-base font-medium cursor-pointer"
+                        [ngClass]="{'text-slate-400': !btnsActive }">{{ getLetter(i) }}) {{ ans }}
                     </label>
                 </div>
             </li>
         </ul>
-        <button (click)="nextQuestion()">Next</button>
+        <button class="bg-amber-900 px-8 py-2 mt-8 rounded text-white disabled:bg-slate-300"
+                    (click)="nextQuestion()" [attr.disabled]="btnsActive ? null : true">Next question</button>
+
     </div>
+
+    <div *ngIf="finished" class="mt-6 text-slate-800">
+        <table class="table-fixed w-full border-separate border-spacing-2 border border-amber-900 bg-amber-50">
+            <thead>
+              <tr>
+                <th class="w-1/12"><span class="hidden lg:inline-block">Question</span> #</th>
+                <th class="w-1/12">Letter</th>
+                <th class="w-10/12">Answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let q of questions; let i = index" class="hover:bg-slate-200">
+                <td class="border border-slate-300 text-center">{{ i+1 }}</td>
+                <td class="border border-slate-300 text-center">{{ getLetter(q.selected) }}</td>
+                <td class="border border-slate-300">{{ q.answers[q.selected] }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div *ngIf="!started">
+        <button class="bg-amber-900 px-8 py-2 mt-8 w-full rounded text-white" (click)="start()">Start Exam</button>
+        <ul class="mt-6 ml-6 text-slate-800 list-disc">
+            <li>You have 10 questions.</li>
+            <li>It is not possible to switch to the previous question.</li>
+            <li>You cannot mark the answer for the first 10 seconds.</li>
+            <li>You have a total of 30 seconds for each question.</li>
+            <li>If you do not answer within 30 seconds, you will move on to the next question.</li>
+        </ul>
+    </div>
+
+    
 
 </div>
 
