@@ -5,8 +5,8 @@
         <div class="z-50 relative">
             <div class="grid md:grid-cols-2">
                 <div class="grid grid-cols-1 text-center md:text-left z-5">
-                    <div class="font-bold text-3xl md:text-5xl pt-12 pb-5">Collectible Sneakers</div>
-                    <span class="font-semibold max-w-lg">Sit elit feugi,at turpis sed integer integer accumsam turpis.
+                    <div class="font-bold text-3xl md:text-5xl pt-16 pb-5">Collectible Sneakers</div>
+                    <span class="font-semibold max-w-xl">Sit elit feugi,at turpis sed integer integer accumsam turpis.
                         Sed
                         suspendisse nec lorem mauris.
                         Pharetra, eu
@@ -21,8 +21,11 @@
                     </div>
                 </div>
                 <div>
-                    <img class="float-right -rotate-12 mt-3"
+                    <div class="float-right relative">
+                        <img class="-rotate-12 mt-3 z-10 relative"
                         src="https://izicop.com/cdn/shop/products/NikeCraft_General_Purpose_Shoe_Tom_Sachs_Dark_Sulfur-DA6672-700-0.png" />
+                        <div class="absolute z-0 bg-[#FBBF24] bg-opacity-40 rounded-2xl w-[70%] h-[100%] top-8 left-24 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                    </div>
                 </div>
             </div>
             <div class="grid md:grid-cols-3 gap-12 py-16 text-center md:text-left">
@@ -67,7 +70,7 @@
     </div>
     <div class="grid md:grid-cols-3 py-12 gap-16">
 
-        <div class="rounded overflow-hidden shadow-xl shadow-[rgba(117,141,199,0.44)]"
+        <div class="rounded overflow-hidden shadow-xl shadow-[rgba(117,141,199,0.35)]"
             *ngFor="let item of ['https://media.gq.com/photos/59135193dd27d21b427e26be/16:9/w_2560%2Cc_limit/acg-sneakers.jpg','https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500','https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_500,c_limit/f55bf732-7fa9-4b38-8464-3332d97f879a/nike%E2%80%99s-best-casual-shoes-for-everyday-wear.jpg']">
             <img class="h-72  object-cover w-full" src="{{ item }}">
             <div class="px-6 py-4">
@@ -87,6 +90,64 @@
 </div>
 
 
+<!-- homepage - 3 -->
+<div class="bg-[#FFFDF3] px-8 md:px-24 py-8 min-h-[150px]">
+    <div class="relative my-20">
+        <div
+            class="grid md:grid-cols-2 shadow-lg border-2 border-gray-50 shadow-[rgba(41,41,41,0.14)] bg-white rounded-xl">
+            <div class="m-16">
+                <div class="">
+                    <div class="font-bold text-4xl md:text-5xl text-center md:text-left mb-8">Why join us</div>
+                    <ul class="space-y-2 font-semibold">
+                        <li><i class="fa fa-check text-green-600 mr-2" aria-hidden="true"></i>Est et in pharetra magna
+                            adipiscing ornare aliquam.</li>
+                        <li><i class="fa fa-check text-green-600 mr-2" aria-hidden="true"></i>Tellus arcu sed consequat
+                            ac velit ut eu blandit.</li>
+                        <li><i class="fa fa-check text-green-600 mr-2" aria-hidden="true"></i>Ullamcorper ornare in et
+                            egestas dolor orci.</li>
+                    </ul>
+                    <div class="mt-5"><button
+                            class="font-semibold text-amber-900 border-amber-900 border-2 py-2 px-8 border-solid rounded-lg hover:bg-amber-900 hover:text-white">Sign
+                            up now</button></div>
+
+
+                </div>
+            </div>
+            <div>
+                <div class="align-middle justify-center h-100">
+                    <div
+                        class="grid grid-flow-row rounded-lg border border-slate-100 scale-75  w-fit">
+                        <div class="px-3 rounded-t-lg bg-white z-20 mt-1">
+                            <i class="fa fa-circle scale-75 text-red-500 mr-1" aria-hidden="true"></i>
+                            <i class="fa fa-circle scale-75 text-yellow-400 mr-1" aria-hidden="true"></i>
+                            <i class="fa fa-circle scale-75 text-green-500 mr-1" aria-hidden="true"></i>
+                        </div>
+                        <div class="relative">
+                            <div class="relative z-20 bg-white p-1.5 rounded-b-lg shadow-lg shadow-[rgba(41,41,41,0.22)]">
+                                <img class="object-cover rounded-b-lg brightness-90"
+                                    src="https://www.kreedon.com/wp-content/uploads/2019/12/people-wearing-running-shoes-2526878-696x392.jpg.webp">
+                                <button onclick="alert('Play video');" class="absolute text-white color top-[35%] left-[42%]">
+                                    <i class="fa fa-play-circle fa-5x" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="absolute bg-[#FDE68A] w-[120%] h-[60%] bottom-14 left-0 -rotate-45 z-0 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                            <div class="absolute bg-pink-700 bg-opacity-70 rounded-2xl w-[40%] h-[70%] -bottom-32 -right-36 z-10 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                            <div class="absolute bg-purple-800 bg-opacity-70 rounded-2xl w-[18%] h-[30%] -bottom-16 right-8 z-10 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                            <div class="absolute bg-amber-700 bg-opacity-70 rounded-2xl w-[18%] h-[30%] -top-16 -left-4 z-10 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                            <div class="absolute bg-green-800 bg-opacity-70 rounded-full w-[20%] h-[35%] -bottom-12 left-24 z-20 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                            <div class="absolute bg-blue-600 bg-opacity-70 rounded-full w-[14%] h-[25%] -top-24 -right-12 z-20 shadow-md shadow-[rgba(41,41,41,0.12)]"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 <!-- homepage - 4 -->
 <div class="relative bg-[#FFFDF3]">
     <span class="absolute ml-8 md:ml-24 bg-[#FDE68A] w-11/12 h-64 mt-5 top-1/4"></span>
@@ -95,21 +156,20 @@
         <div class="text-center mt-5 md:mt-0">
             <div class="md:float-right">
                 <button
-                    class="font-semibold w-12 h-12 text-lg mr-4 border-amber-900 text-amber-900 border-2 py-2 px-2 border-solid rounded-full hover:bg-white"><i
-                        class="fa fa-arrow-left" (click)="scrollLeft()" aria-hidden="true"></i></button>
+                    class="font-semibold w-12 h-12 text-lg mr-4 border-amber-900 text-amber-900 border-2 py-2 px-2 border-solid rounded-full hover:bg-white"
+                    (click)="scrollLeft()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <button
-                    class="font-semibold w-12 h-12 text-lg mr-4 border-amber-900 text-amber-900 border-2 py-2 px-2 border-solid rounded-full hover:bg-white"><i
-                        class="fa fa-arrow-right" (click)="scrollRight()" aria-hidden="true"></i></button>
+                    class="font-semibold w-12 h-12 text-lg mr-4 border-amber-900 text-amber-900 border-2 py-2 px-2 border-solid rounded-full hover:bg-white"
+                    (click)="scrollRight()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 
             </div>
         </div>
 
     </div>
     <div id="testimonials" #test1 class="overflow-hidden scroll-smooth px-8 py-8">
-        <div class="flex2 py-12 gap-1 w-full grid grid-flow-col justify-content-start md:justify-normal z-10 relative">
-            <div class="mx-3 rounded-xl flex flex-col overflow-hidden shadow-sm border-2 border-gray-50 shadow-[rgba(41,41,41,0.22)] bg-white w-64"
-                *ngFor="let item of testimonials">
-
+        <div class="flex2 py-12 w-full grid grid-flow-col justify-content-start md:justify-normal z-10 relative">
+            <div class="rounded-xl ml-8 flex flex-col overflow-hidden shadow-sm border-2 border-gray-50 shadow-[rgba(41,41,41,0.22)] bg-white w-64"
+                *ngFor="let item of testimonials; let last = last">
                 <div class="px-5 py-5 grow">
                     <div class="font-bold text-lg mb-4 text-slate-600"><i class="fa fa-user" aria-hidden="true"></i> {{
                         item.author }}</div>

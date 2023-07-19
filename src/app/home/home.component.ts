@@ -1,11 +1,17 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 declare var $: any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('test1') test1!: ElementRef;
@@ -109,21 +115,24 @@ export class HomeComponent implements AfterViewInit {
     },
   ];
   constructor(private elemRef: ElementRef) {}
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 
   public scrollRight(): void {
+    var blockOuterWidth = $(this.test1.nativeElement).find('> div > div').outerWidth(true);
+    var newPos = $(this.test1.nativeElement).scrollLeft() + blockOuterWidth;
     $(this.test1.nativeElement).animate(
       {
-        scrollLeft: $(this.test1.nativeElement).scrollLeft() + 275,
+        scrollLeft: newPos,
       },
       150
     );
   }
   public scrollLeft(): void {
+    var blockOuterWidth = $(this.test1.nativeElement).find('> div > div').outerWidth(true);
+    var newPos = $(this.test1.nativeElement).scrollLeft() - blockOuterWidth;
     $(this.test1.nativeElement).animate(
       {
-        scrollLeft: $(this.test1.nativeElement).scrollLeft() - 275,
+        scrollLeft: newPos,
       },
       150
     );

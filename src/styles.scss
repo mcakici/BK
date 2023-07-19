@@ -4,3 +4,10 @@
 @tailwind utilities;
 
 @import "fontawesome-4.7/css/font-awesome.css";
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
