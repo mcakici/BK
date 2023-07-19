@@ -6,12 +6,11 @@ import { retry } from 'rxjs';
   selector: 'app-quiz-app',
   templateUrl: './quiz-app.component.html',
   styleUrls: ['./quiz-app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class QuizAppComponent {
   public questions: any = [];
   public activeQuestionIndex: number = 0;
-  public countDown: number = 10;
+  public countDown: number = 30;
   public btnsActive: boolean = false;
   private interval: any = null;
   public started: boolean = false;
@@ -48,7 +47,7 @@ export class QuizAppComponent {
       this.finish();
     }
     this.btnsActive = false;
-    this.countDown = 10;
+    this.countDown = 30;
   }
 
   start(): void {

@@ -1,52 +1,63 @@
 <div class="px-3 md:px-24 py-8 relative bg-[#ebe6d1] min-h-screen">
     <div *ngIf="questions.length > 0 && started && !finished">
-        <div class="flex gap-8 text-xl">
-            <div class="text-xl"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ countDown }} sn</div>
-            <div>Q: <span class="font-bold">{{ activeQuestionIndex+1 }}</span>/10</div>
+        <div
+            class="border-amber-900 border-opacity-30 p-2 border bg-amber-900 bg-opacity-10 text-amber-900 text-opacity-90">
+            <div class="flex gap-2 text-xl">
+                <div class="border-r border-amber-900 border-opacity-30 w-20 font-semibold"><i
+                        class="fa fa-clock-o mr-2" aria-hidden="true"></i> {{ countDown }}</div>
+                <div>Q: <span class="font-bold">{{ activeQuestionIndex+1 }}</span>/10</div>
+            </div>
         </div>
         <div class="text-3xl font-semibold py-6 text-amber-950">Q{{ activeQuestionIndex+1 }}: {{
             questions[activeQuestionIndex].question }}</div>
         <ul class="text-sm font-medium rounded-lg" [ngClass]="{'pointer-events-none': !btnsActive }">
-            <li class="w-full border mb-2 bg-amber-50 border-slate-300 hover:bg-orange-100"
+            <li class="w-full border mb-2 bg-amber-50 border-amber-800 border-opacity-40 hover:bg-orange-100"
                 *ngFor="let ans of questions[activeQuestionIndex].answers; let i = index">
-                <div class="flex items-center pl-3 text-amber-950">
+                <div class="flex items-center pl-3 text-amber-950"
+                    [ngClass]="{'bg-amber-900 bg-opacity-20': questions[activeQuestionIndex].selected === i}">
                     <input id="{{ questions[activeQuestionIndex].id + '' + i }}" (click)="choose($event,i)" type="radio"
                         [value]="i" [attr.disabled]="btnsActive ? null : true" name="list-radio"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 ">
+                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300">
                     <label for="{{ questions[activeQuestionIndex].id + '' + i }}"
                         class="w-full py-3 ml-2 text-base font-medium cursor-pointer"
-                        [ngClass]="{'text-slate-400': !btnsActive }">{{ getLetter(i) }}) {{ ans }}
+                        [ngClass]="{'text-amber-900 text-opacity-80': !btnsActive }">{{ getLetter(i) }}) {{ ans }}
                     </label>
                 </div>
             </li>
         </ul>
-        <button class="bg-amber-900 px-8 py-2 mt-8 rounded text-white disabled:bg-slate-300"
-                    (click)="nextQuestion()" [attr.disabled]="btnsActive ? null : true">Next question</button>
+        <button class="bg-amber-900 px-8 py-2 mt-8 rounded text-white disabled:bg-opacity-20" (click)="nextQuestion()"
+            [attr.disabled]="btnsActive ? null : true">Next question</button>
 
     </div>
 
     <div *ngIf="finished" class="mt-6 text-slate-800">
-        <table class="table-fixed w-full border-separate border-spacing-2 border border-amber-900 bg-amber-50">
+        <table
+            class="table-fixed w-full border-separate border-spacing-2 border border-amber-900 border-opacity-30 bg-amber-50">
             <thead>
-              <tr>
-                <th class="w-1/12"><span class="hidden lg:inline-block">Question</span> #</th>
-                <th class="w-1/12">Letter</th>
-                <th class="w-10/12">Answer</th>
-              </tr>
+                <tr>
+                    <th class="w-1/12"><span class="hidden lg:inline-block">Question</span> #</th>
+                    <th class="w-1/12">Letter</th>
+                    <th class="w-10/12 lg:w-5/12">Answer</th>
+                    <th class="w-5/12 hidden lg:table-cell">Question</th>
+                </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let q of questions; let i = index" class="hover:bg-slate-200">
-                <td class="border border-slate-300 text-center">{{ i+1 }}</td>
-                <td class="border border-slate-300 text-center">{{ getLetter(q.selected) }}</td>
-                <td class="border border-slate-300">{{ q.answers[q.selected] }}</td>
-              </tr>
+                <tr *ngFor="let q of questions; let i = index"
+                    class="hover:bg-amber-900 hover:bg-opacity-90 hover:text-white">
+                    <td class="border border-amber-900 border-opacity-30 text-center">{{ i+1 }}</td>
+                    <td class="border border-amber-900 border-opacity-30 text-center">{{ getLetter(q.selected) }}</td>
+                    <td class="border border-amber-900 border-opacity-30 px-1">{{ q.answers[q.selected] }}</td>
+                    <td class="border border-amber-900 border-opacity-30 px-1 hidden lg:table-cell">{{ q.question }}
+                    </td>
+                </tr>
             </tbody>
-          </table>
+        </table>
     </div>
 
     <div *ngIf="!started">
-        <button class="bg-amber-900 px-8 py-2 mt-8 w-full rounded text-white" (click)="start()">Start Exam</button>
-        <ul class="mt-6 ml-6 text-slate-800 list-disc">
+        <button class="bg-amber-900 px-8 py-2 mt-8 w-full rounded text-white" (click)="start()">Start Exam {{ finished ?
+            '(With different questions)' : '' }}</button>
+        <ul class="mt-6 ml-6 text-slate-800 list-disc marker:text-amber-800">
             <li>You have 10 questions.</li>
             <li>It is not possible to switch to the previous question.</li>
             <li>You cannot mark the answer for the first 10 seconds.</li>
@@ -55,6 +66,6 @@
         </ul>
     </div>
 
-    
+
 
 </div>
