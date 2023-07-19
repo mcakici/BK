@@ -1,6 +1,6 @@
 # BK - Collers
 
-> Live Demo: https://laplup.com/bk
+> Live Demo: https://bk.laplup.com
 
 > Quiz App + Collers
 
