@@ -1,9 +1,10 @@
-# Bk - Collers
+# BK - Collers
 
 > Live Demo: https://laplup.com/bk
 
 > Quiz App + Collers
 
+> Installed Packages: Tailwind, Font-awesome 4.7, Jquery
 ___
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
