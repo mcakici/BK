@@ -8,4 +8,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class LandingPageComponent {
 
+  constructor(){
+  }
+
+  public closeMenu():void{
+    document.getElementById('topMenuList')?.classList.add('hidden');
+  }
 }
