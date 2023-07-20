@@ -33,7 +33,7 @@ export class HomeComponent implements AfterViewInit {
       realname: 'Hellen Jummy',
       comment:
         'Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,  massa.',
-      img: 'https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      img: 'https://scontent.fesb10-4.fna.fbcdn.net/v/t1.6435-9/87454010_2584991181820558_3660209380629938176_n.jpg?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=9267fe&_nc_ohc=SEIbln9RKPUAX8n7HBh&_nc_ht=scontent.fesb10-4.fna&oh=00_AfAbplZ6WglKO1tiTYEuTXt8Y11vdovXbV5vkASMD10aCQ&oe=64E0F624',
     },
     {
       author: 'ArtVenue',
@@ -65,7 +65,7 @@ export class HomeComponent implements AfterViewInit {
       realname: 'John Smith',
       comment:
         'Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,  massa.',
-      img: 'https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      img: 'https://scontent.fesb10-4.fna.fbcdn.net/v/t1.6435-9/87454010_2584991181820558_3660209380629938176_n.jpg?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=9267fe&_nc_ohc=SEIbln9RKPUAX8n7HBh&_nc_ht=scontent.fesb10-4.fna&oh=00_AfAbplZ6WglKO1tiTYEuTXt8Y11vdovXbV5vkASMD10aCQ&oe=64E0F624',
     },
     {
       author: 'Angel',
@@ -97,7 +97,7 @@ export class HomeComponent implements AfterViewInit {
       realname: 'Christina Lane',
       comment:
         'Sit bibendum donec dolar fames neque vulputate non sit aliquam. Consequat turpis natoque leo,  massa.',
-      img: 'https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      img: 'https://scontent.fesb10-4.fna.fbcdn.net/v/t1.6435-9/87454010_2584991181820558_3660209380629938176_n.jpg?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=9267fe&_nc_ohc=SEIbln9RKPUAX8n7HBh&_nc_ht=scontent.fesb10-4.fna&oh=00_AfAbplZ6WglKO1tiTYEuTXt8Y11vdovXbV5vkASMD10aCQ&oe=64E0F624',
     },
     {
       author: 'TurtleBeach',
