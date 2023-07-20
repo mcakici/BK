@@ -15,6 +15,8 @@ declare var $: any;
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('test1') test1!: ElementRef;
+  @ViewChild('youtubeModal') youtubeModal!: ElementRef;
+  @ViewChild('ytIframe') ytIframe!: ElementRef;
 
   testimonials = [
     {
@@ -138,5 +140,10 @@ export class HomeComponent implements AfterViewInit {
       },
       150
     );
+  }
+
+  public openYoutubeModal(): void {
+    this.ytIframe.nativeElement.src = 'https://www.youtube.com/embed/5pqsUfK2N1o?autoplay=1';
+    this.youtubeModal.nativeElement.classList.remove('hidden');
   }
 }
