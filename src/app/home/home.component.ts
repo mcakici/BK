@@ -117,6 +117,36 @@ export class HomeComponent implements AfterViewInit {
   constructor(private elemRef: ElementRef) {}
   ngAfterViewInit(): void {}
 
+  ngOnInit(): void{
+    //this.test1.nativeElement
+    const sliders = document.querySelectorAll('.scroller-div');
+    sliders.forEach(slider => {
+      let mouseDown = false;
+      let startX: number, scrollLeft: number;
+    
+      let startDragging = function (e) {
+        mouseDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      };
+      let stopDragging = function () {
+        mouseDown = false;
+      };
+    
+      slider.addEventListener('mousemove', (e) => {
+        e.preventDefault();
+        if(!mouseDown) { return; }
+        const x = e.pageX - slider.offsetLeft;
+        const scroll = x - startX;
+        slider.scrollLeft = scrollLeft - scroll;
+      });
+      // Add the event listeners
+      slider.addEventListener('mousedown', startDragging, false);
+      slider.addEventListener('mouseup', stopDragging, false);
+      slider.addEventListener('mouseleave', stopDragging, false);
+    });
+  }
+
   public scrollRight(): void {
     var blockOuterWidth = $(this.test1.nativeElement).find('> div > div').outerWidth(true);
     var newPos = $(this.test1.nativeElement).scrollLeft() + blockOuterWidth;
