@@ -9,6 +9,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CustompageComponent } from './custompage/custompage.component';
 import { QuizAppComponent } from './quiz-app/quiz-app.component';
 import { HomeComponent } from './home/home.component';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    DragScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
